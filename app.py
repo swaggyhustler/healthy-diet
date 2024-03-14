@@ -4,7 +4,6 @@ from langchain_openai import OpenAI
 from langchain.chains import LLMChain
 import os
 import re
-os.environ['OPENAI_API_KEY'] = 'api_key' # your openai key
 app = Flask(__name__)
 llm_resto = OpenAI(temperature=0.6)
 prompt_template_resto = PromptTemplate(
