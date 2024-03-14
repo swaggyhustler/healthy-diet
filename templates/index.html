@@ -3,13 +3,39 @@
 <head>
     <title>Diet and Workouts Recommendations</title>
     <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="./style.css" > 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 
-<body style="background:black;color:white">
-    <div class="container mycont mt-5" style="background:white;color:black;border-radius:15px; padding:10px;">
+<body style="background-image: url('https://images.unsplash.com/photo-1498837167922-ddd27525d352?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+    <header class="p-3 text-bg-light bg-dark">
+        <div class="container d-flex align-items-center justify-content-center ">
+          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+              <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+            </a>
+    
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+              <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
+              <li><a href="#" class="nav-link px-2 text-white">Features</a></li>
+              <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
+              <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
+              <li><a href="#" class="nav-link px-2 text-white">About</a></li>
+            </ul>
+    
+            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+              <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
+            </form>
+    
+            <div class="text-end">
+              <button type="button" class="btn btn-outline-light me-2">Login</button>
+              <button type="button" class="btn btn-warning">Sign-up</button>
+            </div>
+          </div>
+        </div>
+      </header>
+    <div class="container mycont mt-5" style="background-color: aliceblue; padding:10px; padding-bottom:50px;" >
         <h1 class="text-center">Diet and Workouts Recommendations</h1>
-
         <form action="/recommend" method="post">
             <div class="row">
                 <div class="col-md-6">
@@ -86,7 +112,7 @@
                 <input type="text" class="form-control" id="foodtype" name="foodtype">
             </div>
 
-            <button type="submit" class="btn btn-danger btn-lrg " style="width:50%; padding:1px;margin-left:20%; font-weight:bold">Recommend Diets</button>
+            <button type="submit" class="btn btn-success float-right mr-2">Recommend Diets</button>
         </form>
     </div>
 
