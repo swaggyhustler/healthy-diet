@@ -4,6 +4,7 @@ from langchain_openai import OpenAI
 from langchain.chains import LLMChain
 import os
 import re
+os.environ["OPENAI_API_KEY"]='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'
 app = Flask(__name__)
 llm_resto = OpenAI(temperature=0.6)
 prompt_template_resto = PromptTemplate(
@@ -57,13 +58,11 @@ def recommend():
         else:
             results_string = results
 
-        # Extracting the different recommendations using regular expressions
         restaurant_names = re.findall(r'Restaurants:(.*?)Breakfast:', results_string, re.DOTALL)
         breakfast_names = re.findall(r'Breakfast:(.*?)Dinner:', results_string, re.DOTALL)
         dinner_names = re.findall(r'Dinner:(.*?)Workouts:', results_string, re.DOTALL)
         workout_names = re.findall(r'Workouts:(.*?)$', results_string, re.DOTALL)
 
-        # Cleaning up the extracted lists and handling empty cases
         restaurant_names = [name.strip() for name in restaurant_names[0].strip().split('\n') if name.strip()] if restaurant_names else ['Sorry, No Restaurant Names!']
         breakfast_names = [name.strip() for name in breakfast_names[0].strip().split('\n') if name.strip()] if breakfast_names else ['Sorry, No Breakfast Names!']
         dinner_names = [name.strip() for name in dinner_names[0].strip().split('\n') if name.strip()] if dinner_names else ['Sorry, No Dinner Names!']
